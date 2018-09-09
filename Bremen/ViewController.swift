@@ -26,6 +26,22 @@ class ViewController: UIViewController {
     var catAudioPlayer: AVAudioPlayer!
     var sheepAudioPlayer: AVAudioPlayer!
     var elephantAudioPlayer: AVAudioPlayer!
+    var backGroundAudioPlayer: AVAudioPlayer!
+    
+    // BGM
+    @IBOutlet weak var bgmSW: UISwitch!
+    
+    @IBAction func toggleBGM(_ sender: UISwitch) {
+        if sender.isOn {
+            backGroundAudioPlayer.currentTime = 0
+            backGroundAudioPlayer.numberOfLoops = -1
+            backGroundAudioPlayer.play()
+        } else {
+            backGroundAudioPlayer.stop()
+        }
+    }
+    
+    // MARK: - View
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +60,13 @@ class ViewController: UIViewController {
         sheepImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.sheepImageViewTapped(_:))))
         elephantImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.elephantImageViewTapped(_:))))
         
+        // バックグラウンドミュージック
+        guard let backGroundSoundPath = Bundle.main.path(forResource: "sounds/ToyCarnival", ofType: "mp3") else {
+            print("backgroundの音源ファイルがありません。"); return;
+        }
+        do {
+            backGroundAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: backGroundSoundPath))
+        } catch { print("失敗") }
         
         guard let chickSoundFilePath = Bundle.main.path(forResource: "sounds/chick-cry1", ofType: "mp3") else {
             print("chick-cry1の音源ファイルがありません。"); return;
@@ -92,12 +115,17 @@ class ViewController: UIViewController {
         catAudioPlayer.prepareToPlay()
         sheepAudioPlayer.prepareToPlay()
         elephantAudioPlayer.prepareToPlay()
+        
+        // BGM
+        backGroundAudioPlayer.prepareToPlay()
+        bgmSW.isOn = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Event
     @objc func imageViewTapped(_ sender: UITapGestureRecognizer){
         playSound(player: chickenAudioPlayer)
         animateImage(imgView: childChickImage)

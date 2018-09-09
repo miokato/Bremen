@@ -36,6 +36,32 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rion" translatesAutoresizingMaskIntoConstraints="NO" id="FON-oP-xWb">
                                 <rect key="frame" x="412" y="50" width="200" height="230.5"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09G-A3-R4e" userLabel="UIView">
+                                <rect key="frame" x="20" y="20" width="60" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BGM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w68-Kx-OqA">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLE-jg-lX8">
+                                        <rect key="frame" x="0.0" y="42" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="toggleBGM:" destination="BYZ-38-t0r" eventType="valueChanged" id="KCr-qs-ojE"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iLE-jg-lX8" firstAttribute="top" secondItem="w68-Kx-OqA" secondAttribute="bottom" constant="10" id="22K-1Q-Oph"/>
+                                    <constraint firstAttribute="width" constant="60" id="7KX-xb-jox"/>
+                                    <constraint firstItem="w68-Kx-OqA" firstAttribute="top" secondItem="09G-A3-R4e" secondAttribute="top" id="GNr-1Q-8qa"/>
+                                    <constraint firstAttribute="height" constant="80" id="dnM-ag-CbY"/>
+                                    <constraint firstItem="w68-Kx-OqA" firstAttribute="leading" secondItem="09G-A3-R4e" secondAttribute="leading" id="edn-Mi-1vv"/>
+                                    <constraint firstItem="iLE-jg-lX8" firstAttribute="leading" secondItem="09G-A3-R4e" secondAttribute="leading" id="oqf-57-fmm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -47,6 +73,7 @@
                             <constraint firstItem="DAv-cD-LHu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="LCH-JO-0i4"/>
                             <constraint firstItem="0Rn-Yi-vbe" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="LIW-hQ-xCq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hBQ-PS-WtP" secondAttribute="trailing" constant="100" id="LjJ-7I-fmc"/>
+                            <constraint firstItem="09G-A3-R4e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ln0-fq-T6S"/>
                             <constraint firstItem="hBQ-PS-WtP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="OLo-pI-YgJ"/>
                             <constraint firstItem="0Rn-Yi-vbe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="25:96" id="Rf8-mV-K04"/>
                             <constraint firstItem="Qwg-yn-XBc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="25:96" id="VT0-bx-QEl"/>
@@ -55,6 +82,7 @@
                             <constraint firstItem="Qwg-yn-XBc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dm0-4E-mrn"/>
                             <constraint firstItem="FON-oP-xWb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ikX-XX-VJ3"/>
                             <constraint firstItem="hBQ-PS-WtP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="25:96" id="inH-wv-jvt"/>
+                            <constraint firstItem="09G-A3-R4e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="nQg-gM-6LP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qwg-yn-XBc" secondAttribute="bottom" constant="30" id="oGa-LF-6b9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DAv-cD-LHu" secondAttribute="bottom" constant="60" id="qbs-sn-HsS"/>
                             <constraint firstItem="FON-oP-xWb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t94-mV-kLS"/>
@@ -67,6 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bgmSW" destination="iLE-jg-lX8" id="ORa-3m-LpK"/>
                         <outlet property="catImage" destination="0Rn-Yi-vbe" id="ULO-Zg-q2S"/>
                         <outlet property="chickenImage" destination="hBQ-PS-WtP" id="dhm-hx-JKG"/>
                         <outlet property="childChickImage" destination="M9d-zd-oUt" id="FaZ-4q-Ybi"/>
