@@ -46,59 +46,46 @@ class ViewController: UIViewController {
         
         
         guard let chickSoundFilePath = Bundle.main.path(forResource: "sounds/chick-cry1", ofType: "mp3") else {
-            print("chick-cry1の音源ファイルがありません。")
-            return
+            print("chick-cry1の音源ファイルがありません。"); return;
         }
         do {
             chickAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: chickSoundFilePath), fileTypeHint: nil)
-        } catch {
-            print("失敗")
-        }
+        } catch { print("失敗") }
+        
         guard let lionSoundFilePath = Bundle.main.path(forResource: "sounds/lion1", ofType: "mp3") else {
-            print("音源ファイルがありません。")
-            return
+            print("音源ファイルがありません。"); return;
         }
         do {
             lionAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lionSoundFilePath), fileTypeHint: nil)
-        } catch {
-            print("失敗")
-        }
+        } catch { print("失敗") }
+        
         guard let chickenSoundFilePath = Bundle.main.path(forResource: "sounds/chicken-cry1", ofType: "mp3") else {
-            print("音源ファイルがありません。")
-            return
+            print("音源ファイルがありません。"); return;
         }
         do {
             chickenAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: chickenSoundFilePath), fileTypeHint: nil)
-        } catch {
-            print("失敗")
-        }
+        } catch { print("失敗") }
+        
         guard let catAudioFilePath = Bundle.main.path(forResource: "sounds/cat-cry1", ofType: "mp3") else {
-            print("音源ファイルがありません。")
-            return
-        }
+            print("音源ファイルがありません。"); return; }
         do {
             catAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: catAudioFilePath), fileTypeHint: nil)
-        } catch {
-            print("失敗")
-        }
+        } catch { print("失敗") }
+        
         guard let sheepAudioFilePath = Bundle.main.path(forResource: "sounds/sheep-cry1", ofType: "mp3") else {
-            print("音源ファイルがありません。")
-            return
+            print("音源ファイルがありません。"); return;
         }
         do {
             sheepAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sheepAudioFilePath), fileTypeHint: nil)
-        } catch {
-            print("失敗")
-        }
+        } catch { print("失敗") }
+        
         guard let elephantAudioFilePath = Bundle.main.path(forResource: "sounds/elephant1", ofType: "mp3") else {
-            print("音源ファイルがありません。")
-            return
+            print("音源ファイルがありません。"); return;
         }
         do {
             elephantAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: elephantAudioFilePath), fileTypeHint: nil)
-        } catch {
-            print("失敗")
-        }
+        } catch { print("失敗") }
+        
         chickAudioPlayer.prepareToPlay()
         lionAudioPlayer.prepareToPlay()
         chickenAudioPlayer.prepareToPlay()
@@ -109,57 +96,43 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @objc func imageViewTapped(_ sender: UITapGestureRecognizer){
-        chickAudioPlayer.currentTime = 0
-        chickAudioPlayer.play()
-        UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
-            self.childChickImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            self.childChickImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
-        }, completion: nil)
+        playSound(player: chickenAudioPlayer)
+        animateImage(imgView: childChickImage)
     }
     @objc func lionImageViewTapped(_ sender: UITapGestureRecognizer){
-        lionAudioPlayer.currentTime = 0
-        lionAudioPlayer.play()
-        UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
-            self.lionImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            self.lionImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
-        }, completion: nil)
+        playSound(player: lionAudioPlayer)
+        animateImage(imgView: lionImage)
     }
     @objc func chickenImageViewTapped(_ sender: UITapGestureRecognizer){
-        chickenAudioPlayer.currentTime = 0
-        chickenAudioPlayer.play()
-        UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
-            self.chickenImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            self.chickenImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
-        }, completion: nil)
+        playSound(player: chickenAudioPlayer)
+        animateImage(imgView: chickenImage)
     }
     @objc func catImageViewTapped(_ sender: UITapGestureRecognizer){
-        catAudioPlayer.currentTime = 0
-        catAudioPlayer.play()
-        UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
-            self.catImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            self.catImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
-        }, completion: nil)
+        playSound(player: catAudioPlayer)
+        animateImage(imgView: catImage)
     }
     @objc func sheepImageViewTapped(_ sender: UITapGestureRecognizer){
-        sheepAudioPlayer.currentTime = 0
-        sheepAudioPlayer.play()
-        UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
-            self.sheepImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            self.sheepImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
-        }, completion: nil)
+        playSound(player: sheepAudioPlayer)
+        animateImage(imgView: sheepImage)
     }
     @objc func elephantImageViewTapped(_ sender: UITapGestureRecognizer){
-        elephantAudioPlayer.currentTime = 0
-        elephantAudioPlayer.play()
-        UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
-            self.elephantImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            self.elephantImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
-        }, completion: nil)
+        playSound(player: elephantAudioPlayer)
+        animateImage(imgView: elephantImage)
     }
     
+    func playSound(player: AVAudioPlayer) {
+        player.currentTime = 0
+        player.play()
+    }
+    
+    func animateImage(imgView: UIImageView) {
+        UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
+            imgView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+            imgView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
+        }, completion: nil)
+    }
 }
 
