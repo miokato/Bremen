@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,19 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird.png" translatesAutoresizingMaskIntoConstraints="NO" id="M9d-zd-oUt">
-                                <rect key="frame" x="100" y="100" width="200" height="230.5"/>
+                                <rect key="frame" x="100" y="80" width="200" height="230.5"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chick" translatesAutoresizingMaskIntoConstraints="NO" id="hBQ-PS-WtP">
-                                <rect key="frame" x="724" y="100" width="200" height="230.5"/>
+                                <rect key="frame" x="724" y="80" width="200" height="230.5"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sheep" translatesAutoresizingMaskIntoConstraints="NO" id="Qwg-yn-XBc">
                                 <rect key="frame" x="412" y="507.5" width="200" height="230.5"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elephant" translatesAutoresizingMaskIntoConstraints="NO" id="DAv-cD-LHu">
-                                <rect key="frame" x="100" y="457.5" width="200" height="230.5"/>
+                                <rect key="frame" x="100" y="477.5" width="200" height="230.5"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="0Rn-Yi-vbe">
-                                <rect key="frame" x="724" y="457.5" width="200" height="230.5"/>
+                                <rect key="frame" x="724" y="477.5" width="200" height="230.5"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rion" translatesAutoresizingMaskIntoConstraints="NO" id="FON-oP-xWb">
                                 <rect key="frame" x="412" y="50" width="200" height="230.5"/>
@@ -49,20 +47,20 @@
                             <constraint firstItem="DAv-cD-LHu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="LCH-JO-0i4"/>
                             <constraint firstItem="0Rn-Yi-vbe" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="LIW-hQ-xCq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hBQ-PS-WtP" secondAttribute="trailing" constant="100" id="LjJ-7I-fmc"/>
-                            <constraint firstItem="hBQ-PS-WtP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="OLo-pI-YgJ"/>
+                            <constraint firstItem="hBQ-PS-WtP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="OLo-pI-YgJ"/>
                             <constraint firstItem="0Rn-Yi-vbe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="25:96" id="Rf8-mV-K04"/>
                             <constraint firstItem="Qwg-yn-XBc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="25:96" id="VT0-bx-QEl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Rn-Yi-vbe" secondAttribute="bottom" constant="80" id="Xbd-8C-Xrs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Rn-Yi-vbe" secondAttribute="bottom" constant="60" id="Xbd-8C-Xrs"/>
                             <constraint firstItem="hBQ-PS-WtP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="XhX-bP-73X"/>
                             <constraint firstItem="Qwg-yn-XBc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dm0-4E-mrn"/>
                             <constraint firstItem="FON-oP-xWb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ikX-XX-VJ3"/>
                             <constraint firstItem="hBQ-PS-WtP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="25:96" id="inH-wv-jvt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qwg-yn-XBc" secondAttribute="bottom" constant="30" id="oGa-LF-6b9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DAv-cD-LHu" secondAttribute="bottom" constant="80" id="qbs-sn-HsS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DAv-cD-LHu" secondAttribute="bottom" constant="60" id="qbs-sn-HsS"/>
                             <constraint firstItem="FON-oP-xWb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t94-mV-kLS"/>
                             <constraint firstItem="FON-oP-xWb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="xrO-ue-4Ne"/>
                             <constraint firstItem="DAv-cD-LHu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="xug-aM-43H"/>
-                            <constraint firstItem="M9d-zd-oUt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="yK3-Vr-mQt"/>
+                            <constraint firstItem="M9d-zd-oUt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="yK3-Vr-mQt"/>
                             <constraint firstItem="Qwg-yn-XBc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="yMg-cb-MoJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Rn-Yi-vbe" secondAttribute="trailing" constant="100" id="ygJ-XL-gAJ"/>
                         </constraints>
